@@ -6,14 +6,18 @@ double f(double x);
 double y(double x);
 
 int main() {
+    //Inputing programm mode
     int usercase = 0;
     std::cin >> usercase;
+    //Setting cout flags
     std::cout.setf(std::ios::right);
     std::cout.setf(std::ios::showpos);
     std::cout.fill('.');
     std::cout.width(8);
     std::cout.precision(3);
-    switch (usercase) {
+    //Exercise isn't consist information about creation any kind of menu.
+    //So, here is program without cycling and screen cleaning
+    switch (usercase) { //Select programm mode
         case 1: {
             double x = 0;
             std::cin >> x;
@@ -38,12 +42,16 @@ int main() {
             }
             break;
         }
+        case 4: {
+            system("pause");
+            exit(0);
+        }
 
-        default:
+        default: //Exercise haven't defined what should be if usermode is incorrect.
             throw std::runtime_error("Wrong case");
     }
     
-
+    system("pause");
     return 0;
 }
 
